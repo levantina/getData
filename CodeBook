@@ -1,0 +1,21 @@
+==== Getting and Cleaning Data Course - Programming Assignment ====
+==== CODE BOOK ====
+
+This Code Book describes the variables, the data, and any transformations or work that the script performed to clean up the data.
+
+The script cleans the data and creates two indipendent data frames with appropriate labels and descriptive variable names. 
+Initially the script imports the test and training datasets (X_test.txt and X_train.txt) from the "UCI HAR Dataset" and joins them into a single data.frame, with columns named taken from the features.txt file.
+Using grep() it is possible to select a subset of data. The partial string matching is used to find the columns that have "mean()" and "std()" in the name. These columns are then selected and they will form a new data frame.
+Regarding column names from features.txt: the "()" and "-" symbols in the names are removed, and "mean" is replaced with "Mean" and "std" with "Std", for readability and consistency.
+
+The script then reads the activity_labels.txt file from the "./UCI HAR Dataset" folder and assigns the names to a variable called activity.
+Also for readability the script cleans the 6 activity names (second column of activity). All names are changed to lower cases (with tolower()). If the name has "_" inside, the "_" is removed and the consecutive letter is changed to upper case (with toupper()).
+
+Before printing on file (allData.txt) the merged data.frame goodData with cleaned column names, the script converts subjects and activities to factors (with as.factor()).
+
+The second part of the script extracts a subset from the merged data.frame. It creates a data.frame with the average of each variable for each activity and each subject. The data.frame is called averageData and it is printed on file (averageData.txt).
+Before printing on file (averageData.txt) the new data.frame averageData, the script converts subjects and activities to factors (with as.factor()).
+
+In the end the script removes from the workspace all variables and object of no further use. Only goodData and averageData data frames remain.
+
+
