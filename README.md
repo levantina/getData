@@ -13,5 +13,6 @@ This will start the analysis, it will take a few moments. In the end you will ha
 
 goodData is also printed in "allData.txt" and
 averageData is also printed in "averageData.txt"
+in the same working directory.
 
 
