@@ -88,7 +88,7 @@ for(i in 1:S) {
 averageData$subject <- as.factor(averageData$subject)
 averageData$activity <- as.factor(averageData$activity)
 #Writes the data.frame on file
-write.table(averageData, "averageData.txt") 
+write.table(averageData, "averageData.txt", row.name = FALSE) 
 
 #In the end it cleans the workspace, except goodData and averageData
 #(the two requested tidy data frames)
